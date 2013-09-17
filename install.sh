@@ -9,7 +9,7 @@ genpasswd() {
 #generate password and save image name
 DB_PASS=`genpasswd`
 APP_PASS=`genpasswd`
-TK_IMAGE='turnkey-rails-12.0-squeeze-x86-xen.tar.bz2'
+TK_IMAGE='turnkey-wordpress-12.1-squeeze-amd64-xen.tar.bz2'
 
 #create new filesystem, mount it
 mkdir -p /mnt/root
@@ -17,7 +17,7 @@ mkfs.ext3 -L root /dev/xvda >/dev/null 2>&1
 mount /dev/xvda /mnt/root
 
 #wget turnkey tarball and vm-firtsboot; two mirror for failed download (in progress)
-wget -q -P /mnt/root http://mirror2.hs-esslingen.de/turnkeylinux.org/xen/$TK_IMAGE # || rm -f /mnt/root/$TK_IMAGE
+wget -q -P /mnt/root http://downloads.sourceforge.net/project/turnkeylinux/xen/$TK_IMAGE # || rm -f /mnt/root/$TK_IMAGE
 #if [ ! -f "$TK_IMAGE" ]; then
 #	wget -q -P /mnt/root http://ftp.halifax.rwth-aachen.de/turnkeylinux/xen/$TK_IMAGE || echo "It's not able download image...exiting"
 #	exit 1
